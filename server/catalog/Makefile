@@ -4,7 +4,7 @@ build:
 	go build -o $(PROJECT_NAME) main.go
 
 run:
-	go run main.go
+	go run ./cmd/api/
 
 clean:
 	rm -f $(PROJECT_NAME)
