@@ -6,7 +6,10 @@ import (
 )
 
 func (app *application) logError(r *http.Request, err error) {
-	app.logger.Print(err)
+	app.logger.PrintInfo(fmt.Sprintf("The error is %s", err), map[string]string{
+		"request_method": r.Method,
+		"request_url":    r.URL.String(),
+	})
 }
 
 func (app *application) errorResponse(w http.ResponseWriter, r *http.Request, status int, message any) {
