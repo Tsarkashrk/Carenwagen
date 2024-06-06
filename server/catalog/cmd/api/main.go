@@ -6,7 +6,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/Tsarkashrk/Carenwagen/server/catalog/internal/data"
-	"github.com/Tsarkashrk/Carenwagen/server/catalog/jsonlog"
+	"github.com/Tsarkashrk/Carenwagen/server/catalog/internal/jsonlog"
 	_ "github.com/lib/pq"
 	"net/http"
 	"os"
