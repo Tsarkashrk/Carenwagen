@@ -38,7 +38,8 @@ func main() {
 
 	flag.IntVar(&cfg.port, "port", 4001, "API server port")
 	flag.StringVar(&cfg.env, "env", "development", "Environment (development|staging|production)")
-	flag.StringVar(&cfg.db.dsn, "db-dsn", "postgres://postgres:Zbekxzz3@localhost:5432/order-service?sslmode=disable", "PostgreSQL DSN")
+	flag.StringVar(&cfg.db.dsn, "db-dsn", "postgres://postgres:postgres@localhost:5432/order-service?sslmode=disable", "PostgreSQL DSN")
+	// flag.StringVar(&cfg.db.dsn, "db-dsn", "postgres://postgres:Zbekxzz3@localhost:5432/order-service?sslmode=disable", "PostgreSQL DSN")
 
 	flag.IntVar(&cfg.db.maxOpenConns, "db-max-open-conns", 25, "PostgreSQL max open connections")
 	flag.IntVar(&cfg.db.maxIdleConns, "db-max-idle-conns", 25, "PostgreSQL max idle connections")
@@ -95,4 +96,16 @@ func openDB(cfg config) (*sql.DB, error) {
 		return nil, err
 	}
 	return db, nil
+}
+
+func enableCORS(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		if r.Method == "OPTIONS" {
+			return
+		}
+		next.ServeHTTP(w, r)
+	})
 }

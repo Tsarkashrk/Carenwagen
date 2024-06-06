@@ -5,6 +5,7 @@ import ACTIONS from '../../constants/actions'
 import AddCar from '../AddCar/AddCar'
 import UpdateCar from '../UpdateCar/UpdateCar'
 import DeleteCar from '../DeleteCar/DeleteCar'
+import Orders from '../Orders/Orders'
 
 const Actions = () => {
   const [actionId, setActionId] = useState(1)
@@ -20,6 +21,9 @@ const Actions = () => {
       break
     case 3:
       result = <DeleteCar />
+      break
+    case 4:
+      result = <Orders />
       break
   }
 

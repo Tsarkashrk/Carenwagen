@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/julienschmidt/httprouter"
 	"net/http"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 func (app *application) routes() http.Handler {
@@ -15,6 +16,5 @@ func (app *application) routes() http.Handler {
 	router.HandlerFunc(http.MethodGet, "/v1/order", app.getAllOrdersHandler)
 	router.HandlerFunc(http.MethodPut, "/v1/order/:id", app.editOrderHandler)
 	router.HandlerFunc(http.MethodDelete, "/v1/order/:id", app.deleteOrderHandler)
-
-	return app.recoverPanic(app.rateLimit(router))
+	return app.recoverPanic(app.rateLimit(enableCORS(router)))
 }
