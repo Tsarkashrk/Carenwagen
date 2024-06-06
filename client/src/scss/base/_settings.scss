@@ -1,0 +1,26 @@
+html {
+  font-family: $primary-font-regular;
+  font-size: 62.5%;
+  color: $color-active;
+}
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  max-width: $max-width;
+  width: 100%;
+  margin: $margin-center;
+  padding: 2rem;
+  background-color: $bg-color;
+}
+
+main {
+}

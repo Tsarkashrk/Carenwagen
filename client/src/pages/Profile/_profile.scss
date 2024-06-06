@@ -1,0 +1,9 @@
+.profile {
+  max-width: 100rem;
+  width: 100%;
+  margin: $margin-center;
+
+  &__content {
+    display: flex;
+  }
+}

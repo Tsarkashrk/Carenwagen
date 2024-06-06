@@ -1,0 +1,23 @@
+.update-car {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: $bg-color-light;
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+
+  &__item {
+    width: 33rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-family: $primary-font-regular;
+    font-size: $xs-font-size;
+  }
+}
