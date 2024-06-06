@@ -10,15 +10,22 @@ const Orders = () => {
       try {
         const response = await axios.get('http://localhost:4001/v1/order')
         setOrders(response.data.orders)
-        console.log(orders)
       } catch (err) {
         setError(err.message)
-        console.log(err);
       }
     }
 
     fetchOrders()
   }, [])
+
+  const deleteOrder = async (id) => {
+    try {
+      await axios.delete(`http://localhost:4001/v1/order/${id}`)
+      setOrders(orders.filter((order) => order.id !== id))
+    } catch (err) {
+      setError(err.message)
+    }
+  }
 
   if (error) {
     return <div>Error: {error}</div>
@@ -29,11 +36,9 @@ const Orders = () => {
       <div className="orders__wrapper">
         <ul className="orders__list">
           {orders.map((order) => (
-            <li key={order.id} className="orders__item">
-              <p className="orders__element">Object Number: {order.id}</p>
-              <p className="orders__id">Order ID: {order.id}</p>
-              <p className="orders__customer-id">Customer ID: {order.customer_id}</p>
-              <p className="orders__car-id">Car ID: {order.car_id}</p>
+            <li key={order.id}>
+              Order Id: {order.id}
+              <button onClick={() => deleteOrder(order.id)}>Delete</button>
             </li>
           ))}
         </ul>

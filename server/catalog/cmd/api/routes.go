@@ -16,5 +16,5 @@ func (app *application) routes() http.Handler {
 	router.HandlerFunc(http.MethodPut, "/v1/cars/:id", app.editCarHandler)
 	router.HandlerFunc(http.MethodDelete, "/v1/cars/:id", app.deleteCarHandler)
 
-	return app.recoverPanic(app.rateLimit(router))
+	return app.recoverPanic(app.rateLimit(enableCORS(router)))
 }

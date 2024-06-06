@@ -6,6 +6,10 @@ import AddCar from '../AddCar/AddCar'
 import UpdateCar from '../UpdateCar/UpdateCar'
 import DeleteCar from '../DeleteCar/DeleteCar'
 import Orders from '../Orders/Orders'
+import DeleteOrder from '../DeleteOrder/DeleteOrder'
+import CreateOrder from '../CreateOrder/CreateOrder'
+import EditOrder from '../EditOrder/EditOrder'
+import GetCars from '../GetCars/GetCars'
 
 const Actions = () => {
   const [actionId, setActionId] = useState(1)
@@ -23,7 +27,19 @@ const Actions = () => {
       result = <DeleteCar />
       break
     case 4:
+      result = <CreateOrder />
+      break
+    case 5:
       result = <Orders />
+      break
+    case 6:
+      result = <DeleteOrder />
+      break
+    case 7:
+      result = <EditOrder />
+      break
+    case 8:
+      result = <GetCars />
       break
   }
 

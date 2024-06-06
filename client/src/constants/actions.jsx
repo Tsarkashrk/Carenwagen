@@ -18,7 +18,27 @@ const ACTIONS = [
   },
   {
     id: 4,
+    text: 'Create order',
+    icon: <ListOrdered />,
+  },
+  {
+    id: 5,
     text: 'Orders',
+    icon: <ListOrdered />,
+  },
+  {
+    id: 6,
+    text: 'Delete order',
+    icon: <ListOrdered />,
+  },
+  {
+    id: 7,
+    text: 'Edit order',
+    icon: <ListOrdered />,
+  },
+  {
+    id: 8,
+    text: 'Get all cars',
     icon: <ListOrdered />,
   },
 ]
