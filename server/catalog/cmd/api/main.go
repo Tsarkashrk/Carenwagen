@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/Tsarkashrk/Carenwagen/server/catalog/internal/data"
 	"log"
 	"net/http"
 	"os"
@@ -19,6 +20,7 @@ type config struct {
 type application struct {
 	config config
 	logger *log.Logger
+	db     *data.DBModel
 }
 
 func main() {

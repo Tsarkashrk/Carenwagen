@@ -3,7 +3,7 @@ package testing
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/erk1nqz/order-service/internal/data"
+	"github.com/Tsarkashrk/Carenwagen/server/order/internal/data"
 	"net/http"
 	"testing"
 )
@@ -13,9 +13,7 @@ func TestCreateOrderHandler(t *testing.T) {
 
 	order := data.Order{
 		CustomerID: 1,
-		CarModel:   "BMW M5",
-		Color:      "Red",
-		Load:       "Competition",
+		CarID:      2,
 	}
 
 	jsonOrder, _ := json.Marshal(order)

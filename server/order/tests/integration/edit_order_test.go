@@ -3,7 +3,7 @@ package testing
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/erk1nqz/order-service/internal/data"
+	"github.com/Tsarkashrk/Carenwagen/server/order/internal/data"
 	"net/http"
 	"testing"
 )
@@ -13,14 +13,12 @@ func TestEditOrderHandler(t *testing.T) {
 
 	order := data.Order{
 		CustomerID: 1,
-		CarModel:   "BMW M5",
-		Color:      "Red",
-		Load:       "Basic",
+		CarID:      2,
 	}
 
 	jsonOrder, _ := json.Marshal(order)
 
-	req, err := http.NewRequest("PUT", "http://localhost:4000/v1/order/4", bytes.NewBuffer(jsonOrder))
+	req, err := http.NewRequest("PUT", "http://localhost:4000/v1/order/1", bytes.NewBuffer(jsonOrder))
 	if err != nil {
 		t.Fatal(err)
 	}

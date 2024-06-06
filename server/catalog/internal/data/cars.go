@@ -7,20 +7,20 @@ import (
 )
 
 type Car struct {
-	ID           int64
-	CreatedAt    time.Time
-	Title        string
-	Model        string
-	Make         string
-	Year         int32
-	Color        string
-	Price        float64
-	Mileage      int32
-	Description  string
-	Transmission string
-	FuelType     string
-	ImageURL     string
-	Version      int32
+	ID           int64     `json:"id"`
+	CreatedAt    time.Time `json:"created_at"`
+	Title        string    `json:"title"`
+	Model        string    `json:"model"`
+	Make         string    `json:"make"`
+	Year         int32     `json:"year"`
+	Color        string    `json:"color"`
+	Price        float64   `json:"price"`
+	Mileage      int32     `json:"mileage"`
+	Description  string    `json:"description"`
+	Transmission string    `json:"transmission"`
+	FuelType     string    `json:"fuel_type"`
+	ImageURL     string    `json:"image_url"`
+	Version      int32     `json:"version"`
 }
 
 func ValidateCar(v *validator.Validator, car *Car) {
