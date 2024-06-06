@@ -12,6 +12,7 @@ func (app *application) routes() http.Handler {
 	router.MethodNotAllowed = http.HandlerFunc(app.methodNotAllowedResponse)
 	router.HandlerFunc(http.MethodPost, "/v1/order", app.createOrderHandler)
 	router.HandlerFunc(http.MethodGet, "/v1/order/:id", app.getOrderHandler)
+	router.HandlerFunc(http.MethodGet, "/v1/order", app.getAllOrdersHandler)
 	router.HandlerFunc(http.MethodPut, "/v1/order/:id", app.editOrderHandler)
 	router.HandlerFunc(http.MethodDelete, "/v1/order/:id", app.deleteOrderHandler)
 

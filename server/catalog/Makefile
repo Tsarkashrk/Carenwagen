@@ -8,3 +8,9 @@ run:
 
 clean:
 	rm -f $(PROJECT_NAME)
+
+migrateup:
+	migrate -path migrations -database "postgres://postgres:Zbekxzz3@localhost:5432/catalog-service?sslmode=disable" up
+
+migratedown:
+	migrate -path migrations -database "postgres://postgres:Zbekxzz3@localhost:5432/catalog-service?sslmode=disable" down

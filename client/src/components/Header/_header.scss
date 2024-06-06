@@ -1,0 +1,26 @@
+.header {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $primary-font-regular;
+    font-size: $xs-font-size;
+  }
+
+  &__logo {
+    font-family: $primary-font-semibold;
+    line-height: 0.9;
+    font-size: $md-font-size;
+    color: $color-active;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &__nav-item {
+    color: $color-active;
+  }
+}

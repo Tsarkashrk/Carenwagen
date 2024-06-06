@@ -85,3 +85,27 @@ func (app *application) readJSON(w http.ResponseWriter, r *http.Request, dst any
 	}
 	return nil
 }
+
+func (app *application) readIntQueryParam(r *http.Request, name string, defaultValue int) int {
+	values := r.URL.Query()
+	valueStr := values.Get(name)
+	if valueStr == "" {
+		return defaultValue
+	}
+
+	value, err := strconv.Atoi(valueStr)
+	if err != nil {
+		return defaultValue
+	}
+
+	return value
+}
+
+func (app *application) readStringQueryParam(r *http.Request, name string, defaultValue string) string {
+	values := r.URL.Query()
+	value := values.Get(name)
+	if value == "" {
+		return defaultValue
+	}
+	return value
+}
