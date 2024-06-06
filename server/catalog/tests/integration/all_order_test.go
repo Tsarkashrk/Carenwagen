@@ -73,7 +73,7 @@ func TestCreateEditDeleteOrderHandler(t *testing.T) {
 		t.Errorf("Expected status code %d, got %d", http.StatusOK, resp.StatusCode)
 	}
 
-	req2, err := http.NewRequest("DELETE", "http://localhost:4000/v1/order/13", nil)
+	req2, err := http.NewRequest("DELETE", "http://localhost:4000/v1/cars/13", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
