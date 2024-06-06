@@ -8,7 +8,7 @@ import (
 func TestDeleteOrderHandler(t *testing.T) {
 	client := &http.Client{}
 
-	req, err := http.NewRequest("DELETE", "http://localhost:4000/v1/order/4", nil)
+	req, err := http.NewRequest("DELETE", "http://localhost:4000/v1/order/1", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
